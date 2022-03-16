@@ -10,6 +10,7 @@ const routes = [
     name: "Home",
     component: Home,
   },
+    // test
   {
     path: "/movie-list",
     name: "MovieList",
