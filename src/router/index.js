@@ -1,59 +1,21 @@
-import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
-import MovieList from "../components/MovieList";
-import MovieCreate from "../components/MovieCreate";
-import Auth from "../components/Auth";
-import Register from "../components/Register";
-const routes = [
+import { createRouter, createWebHistory } from '@ionic/vue-router';
+import HomePage from '../views/HomePage.vue'
+// import HomePage from '../pages/Home.vue'
+const routes= [
   {
-    path: "/",
-    name: "Home",
-    component: Home,
-  },
-    // test
-  {
-    path: "/movie-list",
-    name: "MovieList",
-    component: MovieList,
+    path: '/',
+    redirect: '/home'
   },
   {
-    path: "/movie-list/:msg",
-    name: "MovieUpdatedList",
-    component: MovieList,
-  },
-  {
-    path: "/movie-create",
-    name: "MovieCreate",
-    component: MovieCreate,
-  },
-  {
-    path: "/movie-create/:pk",
-    name: "MovieUpdate",
-    component: MovieCreate,
-  },
-  {
-    path: "/auth",
-    name: "Auth",
-    component: Auth,
-  },
-  {
-    path: "/register",
-    name: "Register",
-    component: Register,
-  },
-];
+    path: '/home',
+    name: 'Home',
+    component: HomePage
+  }
+]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes,
-});
+  routes
+})
 
-// {
-//   path: '/about',
-//   name: 'About',
-//   // route level code-splitting
-//   // this generates a separate chunk (about.[hash].js) for this route
-//   // which is lazy-loaded when the route is visited.
-//   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-// },
-export default router;
+export default router
