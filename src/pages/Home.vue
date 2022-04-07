@@ -1,36 +1,56 @@
-<!--<template>-->
+<template>
+<ion-page>
+  <ion-header :translucent="true">
+    <ion-toolbar>
+    <ion-title>
+      <ion-row>
+        <ion-col>
+          <ion-menu-button slot="start/"></ion-menu-button>
+          <ion-icon :src="videocam"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <h1>Movie App</h1>
+        </ion-col>
+      </ion-row></ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-page>
+</template>
 
-<!--    <ion-tabs @ionTabsWillChange="beforeTabChange" @ionTabsDidChange="afterTabChange">-->
-<!--      <ion-tab-bar slot="bottom">-->
-<!--        <ion-tab-button tab="schedule" href="/tabs/schedule">-->
-<!--          <ion-icon :icon="calendar"></ion-icon>-->
-<!--          <ion-label>Schedule</ion-label>-->
-<!--          <ion-badge>6</ion-badge>-->
-<!--        </ion-tab-button>-->
-
-<!--        <ion-tab-button tab="speakers" href="/tabs/speakers">-->
-<!--          <ion-icon :icon="personCircle"></ion-icon>-->
-<!--          <ion-label>Speakers</ion-label>-->
-<!--        </ion-tab-button>-->
-<!--      </ion-tab-bar>-->
-<!--    </ion-tabs>-->
-<!--  <ion-page>-->
-<!--  </ion-page>-->
-<!--</template>-->
-
-<!--<script>-->
-<!--import {IonPage, IonTabBar, IonTabButton, IonTabs} from "@ionic/vue";-->
-
-<!--export default {-->
-<!--  components:{-->
-<!--    IonPage,-->
-<!--    // IonHeader,-->
-<!--    // IonItem,-->
-<!--    // IonContent,-->
-<!--    // IonList,-->
-<!--    IonTabs,-->
-<!--    IonTabBar,-->
-<!--    IonTabButton,-->
-<!--  }-->
-<!--}-->
-<!--</script>-->
+<script>
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonIcon, IonRow, IonCol, IonMenuButton } from '@ionic/vue';
+import { defineComponent } from 'vue';
+import {videocam} from 'ionicons/icons';
+export default defineComponent({
+  name: 'HomePage',
+  components: {
+    IonContent,
+    IonHeader,
+    IonPage,
+    IonTitle,
+    IonToolbar,
+    IonIcon,
+    IonRow,
+    IonCol,
+    IonMenuButton
+  }, setup(){
+    return{
+      videocam
+    }
+  }
+});
+</script>
+<style>
+ion-icon {
+  font-size: 60px;
+}
+</style>
