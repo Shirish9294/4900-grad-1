@@ -14,7 +14,7 @@
         <ion-item button @click="home">Home</ion-item>
         <ion-item>Movie List</ion-item>
         <ion-item v-if="!authenticated" button @click="login">Login</ion-item>
-        <ion-item v-if="!authenticated">Signup</ion-item>
+        <ion-item v-if="!authenticated" button @click="register">Signup</ion-item>
         <ion-item v-if="authenticated" button @click="logout">Logout</ion-item>
       </ion-list>
     </ion-content>
@@ -65,6 +65,10 @@ export default defineComponent({
       this.authenticated = false;
       router.push('/');
     },
+    register(){
+      menuController.close("app-menu");
+      router.push("Register");
+    }
   },
 });
 

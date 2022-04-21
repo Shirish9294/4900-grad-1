@@ -1,4 +1,5 @@
 <template>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <ion-page>
     <ion-header :translucent="true">
       <ion-toolbar>
@@ -34,6 +35,10 @@
                        placeholder="Password"
                        aria-describedby="inputGroupPrepend2"></ion-input>
           </ion-item>
+          <span class="input-group-text"
+                @click="showPassword = !showPassword">
+            <i class="fa" :class="[showPassword ? 'fa-eye' : 'fa-eye-slash']" aria-hidden="true"></i>
+          </span>
           <ion-button expand="full" @click="login" >Login</ion-button>
         </ion-card-content>
       </ion-card>

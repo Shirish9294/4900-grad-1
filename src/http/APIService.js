@@ -48,9 +48,9 @@ export class APIService {
         return res;
     }
 
-    // registerUser(credentials) {
-    //     const url = `${API_URL}/register/`;
-    //     credentials.customusername = credentials.username;
-    //     return axios.post(url, credentials);
-    // }
+     registerUser(credentials) {
+         const url = `${API_URL}/register/`;
+         credentials.customusername = credentials.username;
+         return axios.post(url, credentials);
+     }
 }
