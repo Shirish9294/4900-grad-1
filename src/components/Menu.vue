@@ -48,7 +48,13 @@ export default defineComponent({
     return {
       videocam
     }
-  }, methods: {
+  },
+  created() {
+    window.mitt.on('event_name', () => {
+      this.authenticated = localStorage.getItem("isAuthenticates");
+    })
+  },
+  methods: {
     home() {
       menuController.close("app-menu");
       router.push("/");

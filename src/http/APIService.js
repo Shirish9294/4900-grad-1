@@ -47,7 +47,6 @@ export class APIService {
         console.log(res);
         return res;
     }
-
      registerUser(credentials) {
          const url = `${API_URL}/register/`;
          credentials.customusername = credentials.username;

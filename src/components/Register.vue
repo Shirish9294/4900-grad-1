@@ -111,7 +111,7 @@
                     v => !!v || "Email is required"
                 ],
                 repassword: [
-                    v => (v == this.password) || 'Passwords must match'
+                    v => (v === this.password) || 'Passwords must match'
                 ]
             },
             showPassword: false,

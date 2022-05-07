@@ -1,5 +1,5 @@
 <template>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">-->
   <ion-page>
     <ion-header :translucent="true">
       <ion-toolbar>
@@ -64,6 +64,8 @@ import {APIService} from "@/http/APIService";
 import router from "@/router";
 const apiService = new APIService();
 // import App from "@/components/Menu";
+import mitt from 'mitt';
+window.mitt = window.mitt || new mitt();
 
 export default defineComponent({
   name: 'Auth',
@@ -117,6 +119,7 @@ export default defineComponent({
                 JSON.stringify(this.credentials.username)
             );
             router.push("/");
+            window.mitt.emit('event_name', 'some message');
           })
           .catch(() => {
             this.loading = false;
