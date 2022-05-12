@@ -12,7 +12,7 @@
     <ion-content>
       <ion-list>
         <ion-item button @click="home">Home</ion-item>
-        <ion-item>Movie List</ion-item>
+        <ion-item v-if="authenticated" button @click="movie">Movie List</ion-item>
         <ion-item v-if="!authenticated" button @click="login">Login</ion-item>
         <ion-item v-if="!authenticated" button @click="register">Signup</ion-item>
         <ion-item v-if="authenticated" button @click="logout">Logout</ion-item>
@@ -25,7 +25,7 @@
 import {IonMenu, IonHeader, IonToolbar, IonList, IonContent, IonIcon, IonRow, IonCol, menuController} from '@ionic/vue';
 import {defineComponent} from 'vue';
 import {videocam} from 'ionicons/icons';
-import router from "@/router";
+import router from "../router";
 // import { APIService } from "@/http/APIService";
 // const apiService = new APIService();
 
@@ -74,6 +74,10 @@ export default defineComponent({
     register(){
       menuController.close("app-menu");
       router.push("Register");
+    },
+    movie(){
+      menuController.close("app-menu");
+      router.push("movie-list");
     }
   },
 });

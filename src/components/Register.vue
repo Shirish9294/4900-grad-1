@@ -21,7 +21,6 @@
                         <ion-input v-model="credentials.password"
                                    type="password"
                                    class="form-control-sm form-control"></ion-input>
-
                     </ion-item>
                     <ion-item>
                         <ion-label position="floating">Re-enter password</ion-label>
@@ -70,8 +69,8 @@
         IonMenuButton
     } from '@ionic/vue';
     import {defineComponent} from 'vue';
-    import {APIService} from "@/http/APIService";
-    import router from "@/router";
+    import {APIService} from "../http/APIService";
+    import router from "../router";
     const apiService = new APIService();
     // import App from "@/components/Menu";
 
