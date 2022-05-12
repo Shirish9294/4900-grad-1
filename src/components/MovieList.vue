@@ -88,7 +88,7 @@ export default defineComponent({
       localStorage.removeItem('reloaded');
     } else {
       localStorage.setItem('reloaded', '1');
-      location.reload();
+      window.location.reload();
       // localStorage.removeItem('reloaded');
     }
   },
